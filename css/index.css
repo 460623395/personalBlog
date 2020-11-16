@@ -1,7 +1,59 @@
-body{
+.index{
   width: 100%;
-  margin-top: 300px;
-  font-size: 50px;
+  height: 100%;
+  background: url('../image/bgLogo.jpg') no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+}
+.title{
+  font-size: 80px;
+  color: white;
   font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -40px;
+  margin-left: -320px;
+}
+.button{
+  width: 160px;
+  height: 50px;
+  border: 1px solid white;
+  color: white;
+  font-size: 30px;
   text-align: center;
+  line-height: 1.5;
+  border-radius: 6px;
+  position: absolute;
+  top: 68%;
+  left: 50%;
+  margin-top: -24px;
+  margin-left: -80px;
+  cursor: pointer;
+  -moz-user-select:none; /*火狐*/
+  -webkit-user-select:none; /*webkit浏览器*/
+  -ms-user-select:none; /*IE10*/
+  -khtml-user-select:none; /*早期浏览器*/
+  user-select:none;
+}
+.button::after{
+  position: absolute;
+  content: '';
+  width: 40px;
+  height: 1px;
+  background: white;
+  top: 50%;
+  right: -50px;
+}
+.button:active{
+  background-color: rgba(255,255,255,0.4);
+}
+.button::before{
+  position: absolute;
+  content: '';
+  width: 40px;
+  height: 1px;
+  background: white;
+  top: 50%;
+  left: -50px;
 }
