@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人博客</title>
+    <title>个人日记</title>
 </head>
 <link rel="stylesheet" href="./css/reset.css">
 <link rel="stylesheet" href="./css/commit.css">
@@ -22,12 +22,21 @@
 <body>
     <div class="index">
         <div class="animated bounceInDown title" id="dowebok">
-            欢迎进入我的博客
+            欢迎进入我的日记<br/>
+            <i>Welcome to my diary</i>
         </div>
-        <div class="animated fadeIn button" id="dowebok">
+        <div class="animated fadeIn button" id='btn'>
             点击进入
         </div>
     </div>
+    <div>
+        
+    </div>
 </body>
-
 </html>
+<script>
+    document.querySelector('#btn').onclick = function(){
+        window.open('./pages/navigation.html','_self')
+        document.querySelector('.index').style.display='none'
+    }
+</script>
