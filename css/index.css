@@ -22,7 +22,7 @@
 }
 
 .title>i {
-  font-size: 40px;
+  font-size: 40px !important;
 }
 
 .button {
@@ -94,7 +94,7 @@
 
 }
 
-.listContent>li {
+.listContent > li {
   border: 1px solid white;
   border-radius: 6px;
   padding: 10px 14px;

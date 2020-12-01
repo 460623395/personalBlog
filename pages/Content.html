@@ -1,11 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>HTML</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/commit.css">
+    <link rel="stylesheet" href="../css/Content.css">
 </head>
+
 <body>
-    
+    <div class="Content">
+        <div class="left">
+            <p class="leftTitle">HTML</p>
+            <ul class="leftCentent"></ul>
+        </div>
+        <div class="right">
+            <p class="leftTitle rightTitle"></p>
+            <iframe frameborder="0" width="100%"></iframe>
+        </div>
+    </div>
 </body>
+
 </html>
+<script>
+    let objList = [{
+            name: "浏览器内核",
+            url: './htmlInfo.html'
+        },
+        {
+            name: "web标准",
+            url: './webBiao.html'
+        }
+    ]
+    //获取左侧导航栏
+    function list() {
+        let info = []
+        for (let i = 0; i < objList.length; i++) {
+            info.push(`<li>${i+1}.${objList[i].name}</li>`)
+        }
+        document.querySelector('.leftCentent').innerHTML = info.join('')
+        document.querySelector('.rightTitle').innerHTML = objList[0].name
+        document.querySelector('iframe').src = objList[0].url
+    }
+    list()
+    //获取相对应的内容
+    function btn() {
+        let li = document.querySelectorAll('.leftCentent>li')
+        let title = ''
+        for (let i = 0; i < li.length; i++) {
+            li[i].onclick = function () {
+                document.querySelector('.rightTitle').innerHTML = objList[i].name
+                document.querySelector('iframe').src = objList[i].url
+            }
+        }
+    }
+    btn()
+</script>
