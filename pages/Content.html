@@ -34,15 +34,21 @@
             url: './webBiao.html'
         }
     ]
+    //获取公共的DOM节点
+    let rightTitle = document.querySelector('.rightTitle')
+    let iframe = document.querySelector('iframe')
     //获取左侧导航栏
     function list() {
+        //存储左侧导航栏的数组
         let info = []
+        //记录当前左侧导航位置
         for (let i = 0; i < objList.length; i++) {
             info.push(`<li>${i+1}.${objList[i].name}</li>`)
         }
         document.querySelector('.leftCentent').innerHTML = info.join('')
-        document.querySelector('.rightTitle').innerHTML = objList[0].name
-        document.querySelector('iframe').src = objList[0].url
+        rightTitle.innerHTML = objList[0].name
+        document.querySelector('.leftCentent>li:nth-child(1)').className = 'active'
+        iframe.src = objList[0].url
     }
     list()
     //获取相对应的内容
@@ -51,8 +57,10 @@
         let title = ''
         for (let i = 0; i < li.length; i++) {
             li[i].onclick = function () {
-                document.querySelector('.rightTitle').innerHTML = objList[i].name
-                document.querySelector('iframe').src = objList[i].url
+                li.forEach(I=>{return I.className = ''})
+                li[i].className = 'active'
+                rightTitle.innerHTML = objList[i].name
+                iframe.src = objList[i].url
             }
         }
     }

@@ -36,6 +36,9 @@
 .leftCentent>li:hover{
   background-color: aqua;
 }
+.active{
+  background-color: aqua;
+}
 .right{
   width: calc(100% - 300px);
   height: 100%;
